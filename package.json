@@ -1,0 +1,25 @@
+{
+    "name": "gavelscript-syntax",
+    "displayName": "GavelScript Syntax",
+    "description": "Syntax highlighting for GavelScript",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.47.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "gavelscript",
+            "aliases": ["GavelScript", "gavelscript"],
+            "extensions": [".gs",".gavel"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "gavelscript",
+            "scopeName": "source.gavel",
+            "path": "./syntaxes/gavelscript.tmLanguage.json"
+        }]
+    }
+}

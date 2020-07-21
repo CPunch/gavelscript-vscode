@@ -1,0 +1,104 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "GavelScript",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#characters"
+		},
+		{
+			"include": "#numbers"
+		}
+	],
+	"repository": {
+		"comments": {
+			"name": "comment.line.double-slash.gavelscript",
+			"begin": "//",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.comment.begin.gavelscript"
+				}
+			},
+			"end": "$"
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.gavelscript",
+					"match": "\\b(if|while|for|return|do|end|function)\\b"
+				},
+				{
+					"name": "support.variable.gavelscript",
+					"match": "\\b(print|input|tonumber|tostring|strings|table|math)\\b"
+				},
+				{
+					"name": "entity.name.type.gavelscript",
+					"match": "\\b(local|global|var)\\b"
+				},
+				{
+					"name": "keyword.operator.gavelscript",
+					"match": "\\b(or|and)\\b"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.gavelscript",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.gavelscript",
+					"match": "\\\\."
+				}
+			]
+		},
+		"characters": {
+			"name": "string.quoted.double.gavelscript",
+			"begin": "'",
+			"end": "'",
+			"patterns": [
+				{
+					"name": "constant.character.escape.gavelscript",
+					"match": "\\\\."
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"name": "constant.numeric.float.gavelscript",
+					"match": "(?:(?:[-]?)(?:[0-9e]*)(?:[.]){1}(?:[0-9]+))"
+				},
+				{
+					"name": "constant.numeric.exponental.gavelscript",
+					"match": "[-+]?[0-9]*\\.?[0-9]+(?:[eE][-+]?[0-9]+)"
+				},
+				{
+					"name": "constant.numeric.binary.gavelscript",
+					"match": "\\b(?:0[b])(?:[0-1]+)"
+				},
+				{
+					"name": "constant.numeric.octal.gavelscript",
+					"match": "\\b(?:0[o])(?:[0-7]+)"
+				},
+				{
+					"name": "constant.numeric.hex.gavelscript",
+					"match": "\\b(?:0[x])(?:[0-9a-fA-F]+)"
+				},
+				{
+					"name": "constant.numeric.integer.gavelscript",
+					"match": "\\b(?:[-]?)(?:[0-9]+)"
+				}
+			]
+		}
+	},
+	"scopeName": "source.gavel"
+}
